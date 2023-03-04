@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #101010;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icons li {
+    position: relative;
+    margin: 0 30px;
+    cursor: pointer;
+}
+
+.social-icons i {
+    color: #222;
+    font-size: 5rem;
+}
+
+.social-icons a::before {
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+    font-size: 5rem;
+    font-family: "FontAwesome";
+    transition: .6s ease-out;
+}
+
+.social-icons a .line {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: calc(100% + 8px);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .4);
+    transition: .6s ease-out;
+}
+
+.social-icons li:nth-child(1) a::before {
+    content: '\f16d';
+    background: linear-gradient(
+        45deg,
+        #ffcc00 0%,
+        #fe6104 32%,
+        #ff0c5a 50%,
+        #fc03bb 62%,
+        #7d0cfd 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.social-icons li:nth-child(1) .line {
+    border-bottom: 4px solid #e31153;
+}
+
+.social-icons li:nth-child(2) a::before {
+    content: '\f099';
+    color: #1da1f2;
+}
+
+.social-icons li:nth-child(2) .line {
+    border-bottom: 4px solid #1a91db;
+}
+
+.social-icons li:nth-child(3) a::before {
+    content: '\f232';
+    color: #25d366;
+}
+
+.social-icons li:nth-child(3) .line {
+    border-bottom: 4px solid #1eb154;
+}
+
+.social-icons li:hover a::before {
+    height: 100%;
+}
+
+.social-icons li:hover .line {
+    transform: translateY(84px);
+}
